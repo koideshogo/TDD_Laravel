@@ -8,14 +8,6 @@ use PHPUnit\Framework\TestCase;
 class FizzBuzzTest extends TestCase
 {
     /**
-     * @before
-     */
-    public function 前準備() 
-    {
-        $FizzBuzz = new FizzBuzzController;
-    }
-
-    /**
      * A basic unit test example.
      *
      * @return void
@@ -23,13 +15,15 @@ class FizzBuzzTest extends TestCase
 
     /** 
      * @test
-     * @before
+     * 
     */
     public function test_1を渡したら文字列1を返すして返す ()
     {
+        $FizzBuzz = new FizzBuzzController;
         //前準備
         //実行
         //検証
+        parent::setUp();
         $this->assertEquals('1', $FizzBuzz->convert(1));
     }
 
